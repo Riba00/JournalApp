@@ -1,7 +1,6 @@
 import { Box, Divider, Drawer, List, Toolbar, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { SideBarItem } from "./SidebarItem";
-import { useState } from "react";
+import { SideBarItem } from "./SideBarItem";
 
 export const SideBar = ({ drawerWidth, isDrawerOpen, isSmallScreen, handleDrawerToggle }) => {
   const { displayName } = useSelector((state) => state.auth);
