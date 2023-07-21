@@ -37,7 +37,6 @@ export const journalSlice = createSlice({
       state.isSaving = false;
       state.notes = state.notes.map(note => {
         if (note.id === action.payload.id) {
-          console.log(1);
           return action.payload;
         }
         return note;
