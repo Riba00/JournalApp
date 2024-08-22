@@ -1,21 +1,18 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore/lite'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from 'firebase/firestore/lite';
 
-// Your web app's Firebase configuration
+// Configuración de Firebase usando variables de entorno
 const firebaseConfig = {
-  apiKey: "AIzaSyAYBI9AbeFcF0Laoq0o-Y0I5RAuSAJ7iyw",
-  authDomain: "react-cursos-fac27.firebaseapp.com",
-  projectId: "react-cursos-fac27",
-  storageBucket: "react-cursos-fac27.appspot.com",
-  messagingSenderId: "337223551009",
-  appId: "1:337223551009:web:4797973390c6e0933abb60"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-// Initialize Firebase
+// Inicializar Firebase
 export const FirebaseApp = initializeApp(firebaseConfig);
-export const FirebaseAuth = getAuth( FirebaseApp );
+export const FirebaseAuth = getAuth(FirebaseApp);
 export const FirebaseDB = getFirestore(FirebaseApp);
